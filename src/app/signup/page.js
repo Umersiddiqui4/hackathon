@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import "../styles/signup.css"
-import { register} from "../config/firebase"
+
 
 const RegistrationForm = () => {
   // Define state variables for form inputs
@@ -16,35 +16,7 @@ const RegistrationForm = () => {
 
   // Handle form submission
   const handleSubmit = async(event) => {
-    event.preventDefault();
-    // Perform form validation and submit data
-    console.log({
-      firstName,
-      lastName,
-      username,
-      email,
-      gender,
-      password,
-      confirmPassword
-    });
-
-    try {
-        await register({
-            firstName,
-            lastName,
-            username,
-            email,
-            gender,
-            password,
-          
-          });
-        console.log("User registered successfully!");
-        // Redirect to another page, show a success message, etc.
-      } catch (error) {
-        console.error("Registration error:", error);
-        // Display an error message to the user
-        alert("Registration failed: " + error.message);
-      }
+   
   };
 
   return (
